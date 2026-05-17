@@ -1,16 +1,17 @@
 plugins {
+    id 'base'
     id 'maven-publish'
 }
 
-group = 'com.github.XJingWei'
-version = '6.0-16kb.2'
+group = 'com.github.xjingwei'
+version = '6.0-16kb.3'
 
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.github.XJingWei'
+            groupId = 'com.github.xjingwei'
             artifactId = 'ffmpeg-kit-full-gpl-16kb-github-package'
-            version = '6.0-16kb.2'
+            version = '6.0-16kb.3'
 
             artifact('docs/maven/com/chongyou/ffmpeg/ffmpeg-kit-full-gpl-16kb/6.0-16kb.1/ffmpeg-kit-full-gpl-16kb-6.0-16kb.1.aar') {
                 extension = 'aar'
