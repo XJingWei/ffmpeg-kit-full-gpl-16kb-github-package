@@ -14,6 +14,12 @@ Public Maven repository:
 https://xjingwei.github.io/ffmpeg-kit-full-gpl-16kb-github-package/maven
 ```
 
+JitPack coordinate, useful when a build environment already includes `https://jitpack.io`:
+
+```text
+com.github.XJingWei:ffmpeg-kit-full-gpl-16kb-github-package:6.0-16kb.1
+```
+
 The large source AAR under `artifacts/` is intentionally ignored by Git. Download it locally before regenerating the Maven repository:
 
 ```bash
@@ -41,6 +47,17 @@ Android Gradle/UTS can consume:
   ],
   "repositories": [
     "maven { url 'https://xjingwei.github.io/ffmpeg-kit-full-gpl-16kb-github-package/maven' }"
+  ]
+}
+```
+
+If the build environment already includes JitPack, use:
+
+```json
+{
+  "minSdkVersion": "24",
+  "dependencies": [
+    "com.github.XJingWei:ffmpeg-kit-full-gpl-16kb-github-package:6.0-16kb.1"
   ]
 }
 ```

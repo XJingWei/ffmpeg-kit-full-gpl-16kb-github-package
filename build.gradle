@@ -1,0 +1,40 @@
+plugins {
+    id 'maven-publish'
+}
+
+group = 'com.github.XJingWei'
+version = '6.0-16kb.1'
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.XJingWei'
+            artifactId = 'ffmpeg-kit-full-gpl-16kb-github-package'
+            version = '6.0-16kb.1'
+
+            artifact('docs/maven/com/chongyou/ffmpeg/ffmpeg-kit-full-gpl-16kb/6.0-16kb.1/ffmpeg-kit-full-gpl-16kb-6.0-16kb.1.aar') {
+                extension = 'aar'
+            }
+
+            pom {
+                name = 'FFmpeg Kit Full GPL 16KB'
+                description = 'FFmpeg Kit Full GPL Android AAR with 16 KB page-size aligned native libraries.'
+                url = 'https://github.com/XJingWei/ffmpeg-kit-full-gpl-16kb-github-package'
+                licenses {
+                    license {
+                        name = 'GPL-3.0'
+                        url = 'https://www.gnu.org/licenses/gpl-3.0.txt'
+                    }
+                }
+                withXml {
+                    def dependenciesNode = asNode().appendNode('dependencies')
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', 'com.arthenica')
+                    dependencyNode.appendNode('artifactId', 'smart-exception-java')
+                    dependencyNode.appendNode('version', '0.2.1')
+                    dependencyNode.appendNode('scope', 'runtime')
+                }
+            }
+        }
+    }
+}
