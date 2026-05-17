@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.chongyou.ffmpeg</groupId>
+  <artifactId>ffmpeg-kit-full-gpl-16kb</artifactId>
+  <version>6.0-16kb.1</version>
+  <packaging>aar</packaging>
+
+  <name>FFmpeg Kit Full GPL 16KB</name>
+  <description>FFmpeg Kit Full GPL Android AAR with 16 KB page-size aligned native libraries.</description>
+  <url>https://github.com/mukuldeep/ffmpeg-kit-16KB</url>
+
+  <licenses>
+    <license>
+      <name>GPL-3.0</name>
+      <url>https://www.gnu.org/licenses/gpl-3.0.txt</url>
+    </license>
+  </licenses>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.arthenica</groupId>
+      <artifactId>smart-exception-java</artifactId>
+      <version>0.2.1</version>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>

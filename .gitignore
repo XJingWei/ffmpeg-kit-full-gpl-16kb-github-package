@@ -1,0 +1,3 @@
+artifacts/*.aar
+target/
+.DS_Store
