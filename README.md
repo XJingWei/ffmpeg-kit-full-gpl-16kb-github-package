@@ -1,6 +1,6 @@
 # FFmpeg Kit Full GPL 16KB GitHub Package
 
-This small repository publishes `ffmpeg-kit-full-gpl-16kb.aar` to GitHub Packages as a Maven artifact.
+This small repository publishes `ffmpeg-kit-full-gpl-16kb.aar` as a public Maven artifact.
 
 Published coordinate:
 
@@ -8,30 +8,39 @@ Published coordinate:
 com.chongyou.ffmpeg:ffmpeg-kit-full-gpl-16kb:6.0-16kb.1
 ```
 
-The large AAR is intentionally ignored by Git. Download it locally before publishing:
+Public Maven repository:
+
+```text
+https://xjingwei.github.io/ffmpeg-kit-full-gpl-16kb-github-package/maven
+```
+
+The large source AAR under `artifacts/` is intentionally ignored by Git. Download it locally before regenerating the Maven repository:
 
 ```bash
 ./scripts/download-aar.sh
 ```
 
-Then publish:
+Regenerate the static Maven repository under `docs/maven`:
 
 ```bash
-export GITHUB_OWNER="your-github-owner"
-export GITHUB_REPO="ffmpeg-kit-full-gpl-16kb-github-package"
-export GITHUB_USERNAME="your-github-username"
-export GITHUB_TOKEN="your-token-with-write-packages"
-
-./scripts/publish-github-packages.sh
+mvn deploy:deploy-file \
+  -Durl="file://$PWD/docs/maven" \
+  -DrepositoryId=local-pages \
+  -Dfile=artifacts/ffmpeg-kit-full-gpl-16kb.aar \
+  -DpomFile=ffmpeg-kit-full-gpl-16kb.pom \
+  -Dpackaging=aar
 ```
 
-After publishing, Android Gradle/UTS can consume:
+Android Gradle/UTS can consume:
 
 ```json
 {
   "minSdkVersion": "24",
   "dependencies": [
     "com.chongyou.ffmpeg:ffmpeg-kit-full-gpl-16kb:6.0-16kb.1"
+  ],
+  "repositories": [
+    "maven { url 'https://xjingwei.github.io/ffmpeg-kit-full-gpl-16kb-github-package/maven' }"
   ]
 }
 ```
