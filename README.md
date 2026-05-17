@@ -17,7 +17,7 @@ https://xjingwei.github.io/ffmpeg-kit-full-gpl-16kb-github-package/maven
 JitPack coordinate, useful when a build environment already includes `https://jitpack.io`:
 
 ```text
-com.github.XJingWei:ffmpeg-kit-full-gpl-16kb-github-package:6.0-16kb.1
+com.github.XJingWei:ffmpeg-kit-full-gpl-16kb-github-package:6.0-16kb.2
 ```
 
 The large source AAR under `artifacts/` is intentionally ignored by Git. Download it locally before regenerating the Maven repository:
@@ -57,7 +57,7 @@ If the build environment already includes JitPack, use:
 {
   "minSdkVersion": "24",
   "dependencies": [
-    "com.github.XJingWei:ffmpeg-kit-full-gpl-16kb-github-package:6.0-16kb.1"
+    "com.github.XJingWei:ffmpeg-kit-full-gpl-16kb-github-package:6.0-16kb.2"
   ]
 }
 ```
